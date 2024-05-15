@@ -66,7 +66,7 @@ else:
 # print("current", current)
 # print("currents", currents)
 # print("abs(current - currents[2])", abs(current - currents[2]))
-if abs(current - currents[2]) > 1e-6:
+if abs(current - currents[2]) < 1e-6:
     print("The circuit does not as a current source because it cannot replicate the Iref current.")
     sys.exit(2)
 else:

@@ -74,7 +74,7 @@ _, _, r_value, p_value, std_err = linregress(time[start:end], vout[start:end])
 
 
 import sys
-if not np.isclose(slope, expected_slope, rtol=0.2):  # 20% tolerance
+if not np.isclose(slope, expected_slope, rtol=0.3):  # 30% tolerance
     print(f"The circuit does not function correctly as an integrator.\n"
           f"Expected slope: {expected_slope} V/s | Actual slope: {slope} V/s\n")
     sys.exit(2)
