@@ -27,8 +27,8 @@ if id_correct == 0:
 
 
 frequency = 100@u_Hz
-analysis = simulator.ac(start_frequency=frequency, stop_frequency=frequency, 
-    number_of_points=1, variation='dec')
+analysis = simulator.ac(start_frequency=frequency, stop_frequency=frequency*10, 
+    number_of_points=2, variation='dec')
 
 import numpy as np
 

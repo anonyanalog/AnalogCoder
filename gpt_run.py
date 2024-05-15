@@ -8,7 +8,7 @@ import time
 import pandas as pd
 import sys
 import shutil
-import ollama
+
 import signal
 import json
 
@@ -35,6 +35,9 @@ parser.add_argument('--api_key', type=str)
 args = parser.parse_args()
 
 opensource_models = ["mistral", "wizardcoder", "deepseek-coder:33b-instruct", "codeqwen", "mixtral", "qwen"]
+
+if any([model in args.model for model in opensource_models]):
+    import ollama
 if args.skill:
     args.num_of_retry = min(2, args.num_of_retry)
 
@@ -834,7 +837,7 @@ def work(task, input, output, task_id, it, background, task_type, flog,
         answer = completion['message']['content']
 
     if "ft:gpt-3.5" in args.model:
-        elif "a:9HyyBpNI" in args.model:
+        if "a:9HyyBpNI" in args.model:
             model_dir = "gpt3p5-ft-A"
         elif "b:9Hzb5l4S" in args.model:
             model_dir = "gpt3p5-ft-B"
