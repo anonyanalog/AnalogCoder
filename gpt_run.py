@@ -1030,7 +1030,7 @@ def work(task, input, output, task_id, it, background, task_type, flog,
                         new_code = replace_voltage(raw_code, best_voltage, vinn_name, vinp_name)
                         # write new op analysis code
                         with open(f"{code_path}", "w") as f:
-                            f.write(new_code + pyspice_template.replace("[OP_PATH]", operating_point_path))
+                            f.write(new_code)
                         # rerun the op test 
                         execution_error_1, simulation_error_1, execution_error_info_1, floating_node_1 = run_code(code_path)
                         # make sure the op test passed
