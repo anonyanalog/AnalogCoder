@@ -8,6 +8,10 @@
 
 gpt3p5/
 gpt4o/
+gpt4/
+
+
+prompt_template_complex_with_sub_*.md
 
 p1_0_0_check.py
 p1_0_0.py

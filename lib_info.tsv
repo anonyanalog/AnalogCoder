@@ -1,0 +1,16 @@
+Id	Type	Av (dB)	Com Av (dB)	Vin(n) Phase	Voltage Bias
+1	Amplifier	13.97940008	NA	inverting	1.5
+2	Amplifier	44.1289455	NA	inverting	1.65
+3	Amplifier	-1.583624911	NA	non-inverting	4
+4	Amplifier	13.97940008	NA	non-inverting	0
+5	Amplifier	13.97940007	NA	inverting	1.5
+6	Inverter	NA	NA	inverting	1.5
+7	Inverter	NA	NA	inverting	1.5
+8	CurrentMirror	NA	NA	NA	0
+9	Amplifier	75.94026898	NA	-90 degree	1
+10	Amplifier	6.020598057	NA	inverting	3
+11	Opamp	193.9794001	-173.6988458	inverting	2.5
+12	CurrentMirror	NA	NA	NA	0
+13	Opamp	13.97940009	-163.2869443	inverting	2.5
+14	Opamp	-37.05736129	-54.72257316	inverting	1.42
+15	Opamp	-28.14888679	-72.72294111	inverting	1.49

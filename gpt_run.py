@@ -848,8 +848,10 @@ def work(task, input, output, task_id, it, background, task_type, flog,
             assert False
     elif "gpt-3" in args.model:
         model_dir = 'gpt3p5'
-    elif "gpt-4" in args.model:
+    elif "gpt-4-turbo" in args.model:
         model_dir = 'gpt4'
+    elif "gpt-4o" in args.model:
+        model_dir = 'gpt4o'
     elif "deepseek-chat" in args.model:
         model_dir = "deepseek2"
     elif any(model in args.model for model in opensource_models):
@@ -1280,11 +1282,12 @@ def get_retrieval(task, task_id):
             time.sleep(30)
         answer = completion.choices[0].message.content
         # print("answer", answer)
-        if not os.path.exists(args.model.replace("-", "")):
-            os.mkdir(args.model.replace("-", ""))
-        if not os.path.exists(os.path.join(args.model.replace("-", ""), f"p{str(task_id)}")):
-            os.mkdir(os.path.join(args.model.replace("-", ""), f"p{str(task_id)}"))
-        fretre_path = os.path.join(args.model.replace("-", ""), f"p{str(task_id)}", "retrieve.txt")
+        base_dir = args.model.replace("-", "").replace("turbo", "")
+        if not os.path.exists(base_dir):
+            os.mkdir(base_dir)
+        if not os.path.exists(os.path.join(base_dir, f"p{str(task_id)}")):
+            os.mkdir(os.path.join(base_dir, f"p{str(task_id)}"))
+        fretre_path = os.path.join(base_dir, f"p{str(task_id)}", "retrieve.txt")
         fretre = open(fretre_path, "w")
         fretre.write(answer)
         fretre.close()
