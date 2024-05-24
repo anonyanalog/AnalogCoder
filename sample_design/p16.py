@@ -1,7 +1,7 @@
 import math
 from PySpice.Spice.Netlist import Circuit
 from PySpice.Unit import *
-from p_lib import *
+from subcircuits.diffop import *
 circuit = Circuit('RC Phase-Shift Oscillator')
 # Define the DC operating voltage
 Vdc = 2.5 @ u_V
