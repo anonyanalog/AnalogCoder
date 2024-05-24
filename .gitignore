@@ -4,7 +4,10 @@
 
 *_log.txt
 
+*_log_no_skill.txt
+
 gpt3p5/
+gpt4o/
 
 p1_0_0_check.py
 p1_0_0.py
