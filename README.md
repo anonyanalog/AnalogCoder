@@ -86,8 +86,41 @@ python gpt_run.py --task_id=1 --api_key="[OPENAI_API]" --num_per_task=1
 ```
 which will generate one circuit based on task 1.
 
-
 # Benchmark
 - Task descriptions are in `problem_set.tsv`.
 - Sample circuits are in directory `sample_design`.
 - Test-benches are in directory `problem_check`.
+
+# Full Tutorial
+1. Design basic circuits. 
+
+For circuits 1-15 are basic circuits which can be designed by AnalogCoder directly.
+
+```
+for task_id in {1..15}
+do
+   python run_gpt.py --task_id=$task_id --api_key="[OPENAI_API]" --num_per_task=15 --model=gpt-4o
+done
+```
+
+All the generated circuits are saved in directory ```gpt4o/```.
+
+2. Build circuit tool library. (Optional)
+
+We already provided a circuit tool library in directory ```subcircuit_lib```.
+You can also build a new library based on the generated basic circuits.
+```
+python write_all_library.py
+```
+
+3. Design composite circuits.
+For circuits 16-24, they are composite circuits. They can be more easily designed with the circuit tool library.
+```
+for task_id in {16..24}
+do
+   python run_gpt.py --task_id=$task_id --api_key="[OPENAI_API]" --num_per_task=15 --model=gpt-4o --skill --retrieval
+done
+```
+The argument *skill* means using the circuit tool library.
+
+The argument *retrieval* means using LLM to retrieve tools from the library first.
