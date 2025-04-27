@@ -7,7 +7,7 @@
   <p style="color: red; font-size: 18px; font-weight: bold;">This repo has stopped updating. Please refer to github.com/laiyao/analogcoder and follow the latest version.</p>
 </div>
 
-For the most current features, bug fixes, and improvements, please visit the active repository at [github.com/laiyao/analogcoder](https://github.com/laiyao1/analogcoder).
+For the most current features, bug fixes, and improvements, please visit the active repository at [github.com/laiyao1/analogcoder](https://github.com/laiyao1/analogcoder).
 
 <p align="center">
   <img src="AnalogCoder_label.png" alt="alt text"width="100">
